@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tag Force 1 Field Spell Previews</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="library-view" id="libraryView" aria-labelledby="pageTitle">
+      <header class="site-header">
+        <div>
+          <p class="eyebrow">Yu-Gi-Oh! Tag Force</p>
+          <h1 id="pageTitle">Field Spell Animation Gallery</h1>
+        </div>
+        <label class="search">
+          <span class="search-icon" aria-hidden="true">🔎</span>
+          <input id="searchInput" type="search" autocomplete="off" placeholder="Search by name or ID">
+        </label>
+      </header>
+
+      <nav class="series-tabs" id="seriesTabs" aria-label="Tag Force games"></nav>
+
+      <p class="render-note">
+        Rendering accuracy is a work in progress. Some effect rendering is not coded yet, so previews may differ from the original game output.
+      </p>
+
+      <div class="status-row">
+        <p id="resultCount"></p>
+      </div>
+
+      <section class="card-grid" id="cardGrid" aria-label="Field spell cards"></section>
+    </section>
+
+    <section class="viewer-view" id="viewerView" aria-labelledby="viewerTitle" hidden>
+      <header class="viewer-bar">
+        <button class="back-button" id="backButton" type="button" aria-label="Back to card list">
+          <span aria-hidden="true">&lt;</span>
+          <span>Back</span>
+        </button>
+        <div>
+          <p class="eyebrow">Field Spell Preview</p>
+          <h2 id="viewerTitle"></h2>
+        </div>
+      </header>
+      <iframe
+        id="previewFrame"
+        title="Field spell WebGL preview"
+        sandbox="allow-scripts allow-same-origin"
+      ></iframe>
+    </section>
+  </main>
+
+  <template id="cardTemplate">
+    <button class="card-tile" type="button">
+      <span class="card-image-wrap">
+        <img alt="" loading="lazy">
+      </span>
+      <span class="card-copy">
+        <span class="card-name"></span>
+      </span>
+    </button>
+  </template>
+
+  <script src="card-names.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
